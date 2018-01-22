@@ -56,5 +56,9 @@ public class person {
 	public String getLastName() {
 		return lastName;
 	}
+	
+	public String getFullName() {
+		return firstName + lastName;
+	}
 }
 
