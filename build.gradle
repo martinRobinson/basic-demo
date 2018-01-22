@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath ("org.junit.platform:junit-platform-gradle-plugin:1.0.0-M4")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.junit.platform.gradle.plugin'
+
+description = 'A trivial Gradle Java build'
+version = '1.0'
+
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    //testCompile group: 'junit', name: 'junit', version: '4.+'
+     testCompile("junit:junit:4.12")
+    testRuntime("org.junit.vintage:junit-vintage-engine:4.12.0-M4")
+
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M4")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0-M4")
+
+   // Enable use of the JUnitPlatform Runner within the IDE
+    testCompile("org.junit.platform:junit-platform-runner:1.0.0-M4")
+}
+
+
+junitPlatform {
+    platformVersion '1.0.2' // optional, defaults to plugin version
+    //logManager 'org.apache.logging.log4j.jul.LogManager'
+    reportsDir file('build/test-results/junit-platform') // this is the default
+    // enableStandardTestTask true
+    // selectors (optional)
+    // filters (optional)
+}
