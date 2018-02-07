@@ -2,7 +2,8 @@ public class person {
 	private String firstName = null;
 	private String lastName = null;
 	private int ageYears = 0;
-
+	private int gender = 0;	
+	
 	public person() {
 		this("Unknown", "Unknown", 0);
 	}
